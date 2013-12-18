@@ -42,7 +42,7 @@ int main( int argc, char** argv )
   std::string parent;
   
   node.param<std::string>("base_name", base_name,"/base_footprint");
-  ROS_INFO("base_name = %s",base_name.c_str()); 
+  
   float costs[MAX_PERSONS] = {std::numeric_limits<float>::max()};
    
   float sum_x;
