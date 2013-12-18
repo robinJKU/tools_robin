@@ -1,0 +1,406 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /TF1/Frames1
+      Splitter Ratio: 0.5
+    Tree Height: 495
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        camera_depth_frame:
+          Value: true
+        camera_depth_optical_frame:
+          Value: true
+        camera_link:
+          Value: true
+        camera_rgb_frame:
+          Value: true
+        camera_rgb_optical_frame:
+          Value: true
+        dominant_person:
+          Value: true
+        group:
+          Value: true
+        head_1:
+          Value: true
+        head_2:
+          Value: true
+        head_3:
+          Value: true
+        head_4:
+          Value: true
+        laser_link:
+          Value: true
+        left_elbow_1:
+          Value: true
+        left_elbow_2:
+          Value: true
+        left_elbow_3:
+          Value: true
+        left_elbow_4:
+          Value: true
+        left_foot_1:
+          Value: true
+        left_foot_2:
+          Value: true
+        left_foot_3:
+          Value: true
+        left_foot_4:
+          Value: true
+        left_hand_1:
+          Value: true
+        left_hand_2:
+          Value: true
+        left_hand_3:
+          Value: true
+        left_hand_4:
+          Value: true
+        left_hip_1:
+          Value: true
+        left_hip_2:
+          Value: true
+        left_hip_3:
+          Value: true
+        left_hip_4:
+          Value: true
+        left_knee_1:
+          Value: true
+        left_knee_2:
+          Value: true
+        left_knee_3:
+          Value: true
+        left_knee_4:
+          Value: true
+        left_shoulder_1:
+          Value: true
+        left_shoulder_2:
+          Value: true
+        left_shoulder_3:
+          Value: true
+        left_shoulder_4:
+          Value: true
+        left_wheel_link:
+          Value: true
+        neck_1:
+          Value: true
+        neck_2:
+          Value: true
+        neck_3:
+          Value: true
+        neck_4:
+          Value: true
+        odom:
+          Value: true
+        right_elbow_1:
+          Value: true
+        right_elbow_2:
+          Value: true
+        right_elbow_3:
+          Value: true
+        right_elbow_4:
+          Value: true
+        right_foot_1:
+          Value: true
+        right_foot_2:
+          Value: true
+        right_foot_3:
+          Value: true
+        right_foot_4:
+          Value: true
+        right_hand_1:
+          Value: true
+        right_hand_2:
+          Value: true
+        right_hand_3:
+          Value: true
+        right_hand_4:
+          Value: true
+        right_hip_1:
+          Value: true
+        right_hip_2:
+          Value: true
+        right_hip_3:
+          Value: true
+        right_hip_4:
+          Value: true
+        right_knee_1:
+          Value: true
+        right_knee_2:
+          Value: true
+        right_knee_3:
+          Value: true
+        right_knee_4:
+          Value: true
+        right_shoulder_1:
+          Value: true
+        right_shoulder_2:
+          Value: true
+        right_shoulder_3:
+          Value: true
+        right_shoulder_4:
+          Value: true
+        right_wheel_link:
+          Value: true
+        torso_1:
+          Value: true
+        torso_2:
+          Value: true
+        torso_3:
+          Value: true
+        torso_4:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: false
+      Tree:
+        odom:
+          base_footprint:
+            base_link:
+              camera_link:
+                camera_depth_frame:
+                  camera_depth_optical_frame:
+                    {}
+                camera_rgb_frame:
+                  camera_rgb_optical_frame:
+                    {}
+                head_1:
+                  {}
+                head_2:
+                  {}
+                head_3:
+                  {}
+                head_4:
+                  {}
+                left_elbow_1:
+                  {}
+                left_elbow_2:
+                  {}
+                left_elbow_3:
+                  {}
+                left_elbow_4:
+                  {}
+                left_foot_1:
+                  {}
+                left_foot_2:
+                  {}
+                left_foot_3:
+                  {}
+                left_foot_4:
+                  {}
+                left_hand_1:
+                  {}
+                left_hand_2:
+                  {}
+                left_hand_3:
+                  {}
+                left_hand_4:
+                  {}
+                left_hip_1:
+                  {}
+                left_hip_2:
+                  {}
+                left_hip_3:
+                  {}
+                left_hip_4:
+                  {}
+                left_knee_1:
+                  {}
+                left_knee_2:
+                  {}
+                left_knee_3:
+                  {}
+                left_knee_4:
+                  {}
+                left_shoulder_1:
+                  {}
+                left_shoulder_2:
+                  {}
+                left_shoulder_3:
+                  {}
+                left_shoulder_4:
+                  {}
+                neck_1:
+                  {}
+                neck_2:
+                  {}
+                neck_3:
+                  {}
+                neck_4:
+                  {}
+                right_elbow_1:
+                  {}
+                right_elbow_2:
+                  {}
+                right_elbow_3:
+                  {}
+                right_elbow_4:
+                  {}
+                right_foot_1:
+                  {}
+                right_foot_2:
+                  {}
+                right_foot_3:
+                  {}
+                right_foot_4:
+                  {}
+                right_hand_1:
+                  {}
+                right_hand_2:
+                  {}
+                right_hand_3:
+                  {}
+                right_hand_4:
+                  {}
+                right_hip_1:
+                  {}
+                right_hip_2:
+                  {}
+                right_hip_3:
+                  {}
+                right_hip_4:
+                  {}
+                right_knee_1:
+                  {}
+                right_knee_2:
+                  {}
+                right_knee_3:
+                  {}
+                right_knee_4:
+                  {}
+                right_shoulder_1:
+                  {}
+                right_shoulder_2:
+                  {}
+                right_shoulder_3:
+                  {}
+                right_shoulder_4:
+                  {}
+                torso_1:
+                  {}
+                torso_2:
+                  {}
+                torso_3:
+                  {}
+                torso_4:
+                  {}
+              laser_link:
+                {}
+              left_wheel_link:
+                {}
+              right_wheel_link:
+                {}
+            dominant_person:
+              {}
+            group:
+              {}
+      Update Interval: 0
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_footprint
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 13.3579
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.300398
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.480398
+    Saved: ~
+Window Geometry:
+  Camera:
+    collapsed: false
+  Displays:
+    collapsed: false
+  Height: 776
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000001fe0000027efc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc000000280000027e000000dd00fffffffa000000010100000002fb0000000c00430061006d0065007200610000000000ffffffff0000006500000065fb000000100044006900730070006c0061007900730100000000000001fe0000010f00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006101000001ee000000b80000000000000000000000010000010f0000027efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000027e000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004bf0000003efc0100000002fb0000000800540069006d00650100000000000004bf000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000002bb0000027e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1215
+  X: 58
+  Y: 24

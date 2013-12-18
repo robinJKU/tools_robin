@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>robin_people_detection</name>
+  <version>0.1.0</version>
+  <description>The robin_people_detection package</description>
+
+  <maintainer email="andreas@reiter-stt.at">Reiter Andreas</maintainer> 
+  <maintainer email="johannesreisenberger@gmx.at">Reisenberger Johannes</maintainer>
+  <license>BSD</license>
+  <url type="website">http://ros.org/wiki/robin_people_detection</url>
+  <author email="andreas@reiter-stt.at">Reiter Andreas</author> 
+  <author email="johannesreisenberger@gmx.at">Reisenberger Johannes</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>openni_tracker</run_depend>
+</package>
