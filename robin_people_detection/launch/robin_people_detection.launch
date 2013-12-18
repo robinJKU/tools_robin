@@ -19,6 +19,8 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find people_detection)/launch/kinect.rviz" />
   
-  <node pkg="people_detection" type="people_detection" name="person_detector" output="screen" />
+  <node pkg="robin_people_detection" type="robin_people_detection" name="robin_people_detection" output="screen" >
+	<param name = "base_name" type = "string" value = "/base_footprint" />
+  </node>
   
 </launch>

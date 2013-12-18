@@ -2,7 +2,7 @@
 <package>
   <name>robin_people_detection</name>
   <version>0.1.0</version>
-  <description>The robin_people_detection package</description>
+  <description>This package uses openni_tracker to detect persons and provides tf of the footprint of the dominant person and a tf of the footprint of the group of detected persons.</description>
 
   <maintainer email="andreas@reiter-stt.at">Reiter Andreas</maintainer> 
   <maintainer email="johannesreisenberger@gmx.at">Reisenberger Johannes</maintainer>

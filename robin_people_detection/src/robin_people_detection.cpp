@@ -17,17 +17,22 @@ tf::StampedTransform zTransform(const tf::StampedTransform transform);
 float getCosts(const tf::StampedTransform transform);
 int getMinIndex (int n, float *values);
 
+//ROS Params
+std::string base_name; 
+
 // global Constants
 const int MAX_PERSONS = 20;
 const std::string DOM_PERSON_NAME = "/dominant_person";
 const std::string GROUP_NAME = "/group";
 
 
+
+
 int main( int argc, char** argv )
 {
   ros::init(argc, argv, "robin_people_detection");
   // Set Markernode and publish rate 10Hz
-  ros::NodeHandle node;
+  ros::NodeHandle node("~");
   ros::Rate r(10);
   
   tf::TransformListener li;
@@ -35,7 +40,9 @@ int main( int argc, char** argv )
   std::string torso_name;
   std::string err_msg;
   std::string parent;
-   
+  
+  node.param<std::string>("base_name", base_name,"/base_footprint");
+  ROS_INFO("base_name = %s",base_name.c_str()); 
   float costs[MAX_PERSONS] = {std::numeric_limits<float>::max()};
    
   float sum_x;
@@ -49,6 +56,8 @@ int main( int argc, char** argv )
   tf::StampedTransform transformZ0;
     
   ros::Time now;
+ 
+  
   
   while (ros::ok()) {
     now = ros::Time::now();
@@ -67,8 +76,8 @@ int main( int argc, char** argv )
       if(li.frameExists(torso_name)&&li.getParent(torso_name, now-ros::Duration(1), parent)) {
 	try{
 	  //get transformation
-	  li.waitForTransform("/base_footprint" ,torso_name, now, ros::Duration(1) );
-	  li.lookupTransform("/base_footprint" ,torso_name , now, transforms[i-1]);
+	  li.waitForTransform(base_name ,torso_name, now, ros::Duration(1) );
+	  li.lookupTransform(base_name ,torso_name , now, transforms[i-1]);
  	  costs[i-1] = getCosts(transforms[i-1]);
 	  nTransforms++;
 	  sum_x += transforms[i-1].getOrigin().getX();
@@ -89,7 +98,7 @@ int main( int argc, char** argv )
       torso_name="torso_"+ss.str();
 	
       transformZ0 = zTransform(transforms[i]);
-      br.sendTransform(tf::StampedTransform(transformZ0, ros::Time::now(), "/base_footprint", DOM_PERSON_NAME)); 
+      br.sendTransform(tf::StampedTransform(transformZ0, ros::Time::now(), base_name, DOM_PERSON_NAME)); 
 	
     }//if(i >= 0)
        
@@ -98,7 +107,7 @@ int main( int argc, char** argv )
       tf::StampedTransform groupTransf;
       groupTransf.setOrigin(tf::Vector3(sum_x/nTransforms,sum_y/nTransforms,0));
       groupTransf.setRotation(tf::Quaternion(tf::Vector3(0,0,1),0.0));
-      br.sendTransform(tf::StampedTransform(groupTransf, ros::Time::now(), "/base_footprint", GROUP_NAME));
+      br.sendTransform(tf::StampedTransform(groupTransf, ros::Time::now(), base_name, GROUP_NAME));
     }//if(nTransforms > 0)
        
     // Call Callbacks for good measure 
@@ -144,6 +153,7 @@ int getMinIndex (int n, float *values) {
   }
   return ind;
 }
+
 
 
 
