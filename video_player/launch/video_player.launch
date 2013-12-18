@@ -1,0 +1,21 @@
+<launch>
+	<!-- Set this to your camera's name -->
+		<arg name="cam_name" value="videoStreamer" />
+
+	<!-- Start the GSCAM node -->
+		
+		<!--
+		<env name="GSCAM_CONFIG" value="filesrc location=/home/student/Downloads/Video1/Video1.avi ! avidemux name=demux demux.video_00 ! decodebin  ! ffmpegcolorspace  ! video/x-raw-rgb ! identity name=ros ! fakesin" />
+		-->
+		
+		<node pkg="video_player" type="video_player_node" name="$(arg cam_name)">
+			<param name="mode" value="mode_II" />
+			<param name="camera_name" value="$(arg cam_name)" />
+			
+			<!--
+			<remap from="camera/image_raw" to="$(arg cam_name)/image_raw" />
+			-->
+			
+			<remap from="camera/image_raw" to="camera/rgb/image_color/compressed_throttle" />
+		</node>
+</launch>
