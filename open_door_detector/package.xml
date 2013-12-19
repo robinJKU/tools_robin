@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>open_door_detector</name>
+  <version>0.1.0</version>
+  <description>Provides a service to detect if a door is open. If this is the case, it returns the position of the middle of the door. Otherwise it returns position 0.</description>
+
+  <maintainer email="andreas@reiter-stt.at">Reiter Andreas</maintainer> 
+  <maintainer email="johannesreisenberger@gmx.at">Reisenberger Johannes</maintainer>
+  <license>BSD</license>
+  <url type="website">http://ros.org/wiki/open_door_detector</url>
+  <author email="andreas@reiter-stt.at">Reiter Andreas</author> 
+  <author email="johannesreisenberger@gmx.at">Reisenberger Johannes</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+
+</package>

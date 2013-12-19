@@ -1,0 +1,5 @@
+float32 aperture_angle
+float32 wall_distance
+
+---
+geometry_msgs/PoseStamped door_pos
