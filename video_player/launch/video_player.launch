@@ -16,6 +16,14 @@
 			<remap from="camera/image_raw" to="$(arg cam_name)/image_raw" />
 			-->
 			
-			<remap from="camera/image_raw" to="camera/rgb/image_color/compressed_throttle" />
+			<!--
+			<remap from="camera/image_raw/compressed" to="camera/rgb/image_color/compressed_throttle" />
+			-->
 		</node>
+		
+		<param name="camera/image_raw/compressed/jpeg_quality" value="8"/>
+		
+		<!-- Make a slower camera feed available. -->
+		<node pkg="topic_tools" type="throttle" name="camera_throttle" output="screen" args="messages camera/image_raw/compressed 10 camera/rgb/image_color/compressed_throttle"/>
+
 </launch>
