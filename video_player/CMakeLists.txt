@@ -37,7 +37,7 @@ generate_messages(
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+  #INCLUDE_DIRS include
   LIBRARIES gscam
   CATKIN_DEPENDS roscpp rospy std_msgs message_generation gscam
 #  DEPENDS system_lib
