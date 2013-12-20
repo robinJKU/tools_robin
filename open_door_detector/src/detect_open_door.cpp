@@ -21,6 +21,7 @@ bool detect_door(open_door_detector::detect_open_door::Request  &req,
 void laserCallback(const sensor_msgs::LaserScan::ConstPtr& scan_in);
 
 const int DETECTION_THRESHOLD=25;
+const float WALL_DIST_THRESHOLD=0.2;
 
 //global Param
 sensor_msgs::LaserScan last_scan_in;
@@ -61,7 +62,7 @@ bool detect_door(open_door_detector::detect_open_door::Request  &req,
   
   // detect door
   for(int i=range_start; i<=range_end; i++){
-    laser_dist = req.wall_distance/cos(last_scan_in.angle_min + i*last_scan_in.angle_increment);
+    laser_dist = (req.wall_distance + WALL_DIST_THRESHOLD)/cos(last_scan_in.angle_min + i*last_scan_in.angle_increment);
     if(isDoor) {
       if(last_scan_in.ranges[i] <= laser_dist) {
 	n_short++;
