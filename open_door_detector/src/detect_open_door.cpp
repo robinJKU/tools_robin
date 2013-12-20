@@ -57,6 +57,7 @@ bool detect_door(open_door_detector::detect_open_door::Request  &req,
   int n_long = 0;
   bool isDoor = false;
   float laser_dist;
+  float door_width;
   
   // detect door
   for(int i=range_start; i<=range_end; i++){
@@ -69,7 +70,17 @@ bool detect_door(open_door_detector::detect_open_door::Request  &req,
       }
       if(n_short > DETECTION_THRESHOLD) {
 	door_end = i - DETECTION_THRESHOLD + 1;
-	break;
+	door_width = req.wall_distance*(tan(last_scan_in.angle_min+door_end*last_scan_in.angle_increment)
+				    -tan(last_scan_in.angle_min+door_start*last_scan_in.angle_increment));
+	if(door_width <= req.min_door_width) {
+	  isDoor = false;
+	  door_start = 0;
+	  door_end = 0;
+	  n_short = 0;
+	  n_long = 0;
+	} else {
+	  break;
+	}
       }
     } else {
       if(last_scan_in.ranges[i] > laser_dist || last_scan_in.ranges[i] != last_scan_in.ranges[i]) {
