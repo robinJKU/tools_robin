@@ -3,7 +3,8 @@
   <name>sensorhand_speed</name>
   <version>0.5.0</version>
   <description>ROS driver package for the Otto Bock SensorHand Speed prosthetics device.</description>
-
+  <url>http://www.ros.org/wiki/sensorhand_speed</url>
+  
   <author email="ros@dualspace.at">Alexander Reiter</author>
   <maintainer email="ros@dualspace.at">Alexander Reiter</maintainer>
   <maintainer email="joh.mayr@jku.at">Johannes Mayr</maintainer>
