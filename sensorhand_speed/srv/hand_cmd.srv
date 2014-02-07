@@ -1,0 +1,26 @@
+#request constants
+uint8 START_DUMP = 0
+uint8 STOP_DUMP = 1
+uint8 OPEN = 2
+uint8 CLOSE = 3
+uint8 STOP = 4
+uint8 GET_SN = 5
+uint8 RESET = 6
+uint8 PRGM = 7
+
+
+#request fields
+uint8 cmd
+float32 param
+# param:
+# cmd == OPEN, CLOSE: gripping force from 0 to 1
+# cmd == PRGM: program number 0 to 4
+#               0: soft grip fastening
+#               1: hand stops after first grip
+#               2: maximum velocity, maximum force will be applied
+#               3,4: undocumented
+---
+#response constants
+
+#response fields
+bool success
