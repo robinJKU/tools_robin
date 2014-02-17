@@ -20,13 +20,13 @@
  *  baud_rate (int): baud rate of serial interface (needs to be 19200 = default)
  * 
  * PUBLISHED TOPICS:
- *  hand_dump (hex_serial::hand_dump): topic on which feedback is published
+ *  hand_dump (sensorhand_speed::hand_dump): topic on which feedback is published
  * 
  * SUBSCRIBED TOPICS:
  *  none
  * 
  * OFFERED SERVICES:
- *  hand_srv (hex_serial::hand_srv): offers access to device functionality
+ *  hand_srv (sensorhand_speed::hand_srv): offers access to device functionality
 */
 
 #include <stdio.h>
@@ -37,8 +37,8 @@
 #include <ros/ros.h>
 #include <cereal_port/CerealPort.h>
 
-#include "hex_serial/hand_cmd.h"
-#include "hex_serial/hand_dump.h"
+#include "sensorhand_speed/hand_cmd.h"
+#include "sensorhand_speed/hand_dump.h"
 
 #define TIMEOUT 100
 
@@ -55,7 +55,7 @@ enum State {IDLE, READ_FIRST, READ_LEN, READ_DATA, READ_CS} state;
 // function declarations
 bool readByte(cereal::CerealPort* device, char* data);
 bool sendCommand(cereal::CerealPort* device, Command* cmd);
-bool srv_callback(hex_serial::hand_cmd::Request& request, hex_serial::hand_cmd::Response& response);
+bool srv_callback(sensorhand_speed::hand_cmd::Request& request, sensorhand_speed::hand_cmd::Response& response);
 void publish_dump(ros::Publisher& dump_pub, char* data);
 
 
@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
   ros::ServiceServer service = n.advertiseService("hand_srv", srv_callback);
   
   // init publisher for dump values
-  ros::Publisher dump_pub = n.advertise<hex_serial::hand_dump>("hand_dump", 1000);
+  ros::Publisher dump_pub = n.advertise<sensorhand_speed::hand_dump>("hand_dump", 1000);
   
   std::string port;
   if (!n.hasParam("port")) {
@@ -427,11 +427,11 @@ bool sendCommand(cereal::CerealPort* device, Command* cmd) {
  * true is returned as the function return value as well as in the 
  * service response data structure.
  * 
- * INPUT: hex_serial::hand_cmd::Request&: pointer to request structure
- *        hex_serial::hand_cmd::Response&: pointer to response structure
+ * INPUT: sensorhand_speed::hand_cmd::Request&: pointer to request structure
+ *        sensorhand_speed::hand_cmd::Response&: pointer to response structure
  * OUTPUT: bool if communiction with the hand device was successful
  */
-bool srv_callback(hex_serial::hand_cmd::Request& request, hex_serial::hand_cmd::Response& response) {
+bool srv_callback(sensorhand_speed::hand_cmd::Request& request, sensorhand_speed::hand_cmd::Response& response) {
   ROS_INFO("Hand service called");
   
   Command cmd;
@@ -445,7 +445,7 @@ bool srv_callback(hex_serial::hand_cmd::Request& request, hex_serial::hand_cmd::
 
 /* Function that reads data from the data received from the hand device
  * and converts it from binary to numeric values, stores it in a 
- * hex_serial::hand_dump structure and published the message by means of 
+ * sensorhand_speed::hand_dump structure and published the message by means of 
  * the provided publisher.
  * 
  * Conversion information in [brackets]:
@@ -461,7 +461,7 @@ bool srv_callback(hex_serial::hand_cmd::Request& request, hex_serial::hand_cmd::
  * OUTPUT:  none
  */
 void publish_dump(ros::Publisher& dump_pub, char* data) {
-  hex_serial::hand_dump msg;
+  sensorhand_speed::hand_dump msg;
   msg.V_open = 1.5/85 * (uint8_t) data[0];
   msg.V_close = 1.5/85 * (uint8_t) data[1];
   msg.V_bat = 8.4/238 * (uint8_t) data[2];
