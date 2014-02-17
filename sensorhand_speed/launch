@@ -1,8 +1,0 @@
-<launch>
-  
-  <node name="hand_node" pkg="sensorhand_speed" type="hand_node" >
-    <param name="port" type="str" value="/dev/ttyUSB0" />
-    <param name="baud_rate" type="int" value="19200" />
-  </node>
-    
-</launch>
