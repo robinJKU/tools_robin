@@ -19,7 +19,7 @@ add_service_files(FILES
 )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
+generate_messages(
  DEPENDENCIES
  std_msgs
 )
@@ -36,6 +36,8 @@ include_directories(
 )
 
 add_executable(hand_node src/hand_node.cpp)
+
+add_dependencies(hand_node ${PROJECT_NAME}_gencpp)
 
 target_link_libraries(hand_node
   cereal_port
